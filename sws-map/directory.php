@@ -1,7 +1,7 @@
 <?php
 //session_start();
 
-echo getcwd();
+//echo getcwd();
 
 require_once '../inc/dir/assets/Db.php';
 require_once '../inc/dir/assets/dir_functions.php';
@@ -13,9 +13,9 @@ $db = new DB_map();
 <script>
 	var count = 0;
 	var depth = 8;
-	jQuery('document').ready(function(){
+	$('document').ready(function(){
 	while (count < depth){
-    	jQuery('#southwestern-union:hover').first().clone().appendTo('#southwestern-union:hover').css({"top" : count , "left" : count});
+    	$('#southwestern-union:hover').first().clone().appendTo('#southwestern-union:hover').css({"top" : count , "left" : count});
 	count++;
   	}
 	});
@@ -23,7 +23,7 @@ $db = new DB_map();
 </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.$.com/$-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -33,21 +33,21 @@ $db = new DB_map();
 <script src="//min-db1.nadadventist.org/javascript/sew_spamspan.js"></script>
 <script type="text/javascript">
 function showOne(id) {
-    jQuery('.details').not(id).addClass('hideClass');
-    jQuery('#'+ id).removeClass('hideClass'); 	
+    $('.details').not(id).addClass('hideClass');
+    $('#'+ id).removeClass('hideClass'); 	
 }   
 </script>
 <script type="text/javascript">
-        jQuery(document).ready(function() {
+        $(document).ready(function() {
 		            
-         jQuery("#showUS").click(function () {
-          jQuery('#can-map').addClass('hideClass');
-          jQuery('#us-map').removeClass('hideClass');
+         $("#showUS").click(function () {
+          $('#can-map').addClass('hideClass');
+          $('#us-map').removeClass('hideClass');
             });
          
-            jQuery("#showCAN").click(function () {
-          jQuery('#us-map').addClass('hideClass');
-          jQuery('#can-map').removeClass('hideClass'); 
+            $("#showCAN").click(function () {
+          $('#us-map').addClass('hideClass');
+          $('#can-map').removeClass('hideClass'); 
             });
          
         });     
