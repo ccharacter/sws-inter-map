@@ -1,6 +1,108 @@
 <?php
 
 //Eric's code
+
+function min_list_union($union_name, $union, $expand="N",$edit="Y", $u_group=4, $link_site="N",$outerDiv="Y") {
+	
+	$db = new Db(); $my_min=$_SESSION['sew']['which'];	$k=0;
+
+if ($outerDiv=="N") { echo "<div id='$union' style='clear:both; background-color: lavender; padding: 6px; max-height: 120px; overflow: auto'>"; } 
+	else { echo "<div id='$union' style='clear:both'>"; }
+	
+	// first get office and any Union personnel
+	$sql="select * from dbi_master where union_conf like '".$union_name."%' and lastname='UNION'"; // echo $sql;
+	$union_array = $db -> select($sql); 
+
+	if (count($union_array)>0) {
+		foreach ($union_array as $key=>$value) {
+			$row=$union_array[$key];
+			if (($k>0) && ($outerDiv=="N")) { echo "<hr />";}
+			min_directory($row,$edit, "N","N","N","N",$link_site,$u_group, "Y");
+			// min_directory($row,$edit,$show_groups,$show_dire,$show_conf,$show_union,$link_site,$u_group,$outerDiv,$confWord)
+			$k++;
+		}
+	}
+
+	$sql="select * from dbi_master where union_conf like '".$union_name."%' and not lastname='UNION' and (conference like '%".$union_name."%' or conference='' or conference like '%Union%' or conference is null or `groups` like '%:".$u_group.":%') order by lastname"; // echo $sql;
+	$union_array = $db -> select($sql); 
+
+	if (count($union_array)>0) {
+		foreach ($union_array as $key=>$value) {
+			$row=$union_array[$key];
+					if ($outerDiv=="N") { echo "<hr />";}
+			min_directory($row,$edit, "N","N","N","N",$link_site,$u_group, "Y");
+
+		}
+	}
+	echo "</div>";	
+	
+}
+
+function min_directory($row, $edit="Y", $show_groups="Y", $show_dir="Y", $show_conf="N", $show_union="N",$link_site="N", $u_group=4,$outerDiv="Y",$confWord="N") {
+
+	if ($outerDiv=="Y") {	echo "<div style='min-width: 20em; display: inline-block; vertical-align: top; padding-bottom:1em' class='dir_listing'>"; };
+	if ($confWord=="Y") { $confText=" Conference";} else {$confText="";}
+		
+		echo "<div style='margin-left:1.5em; display: inline-block;'><strong>";
+		if (($link_site=="Y") && (strlen($row['website'])>0)) {	
+				echo "<a href='".$row['website']."' target='_blank'>";
+				echo min_list_names($row['id']);
+				echo "</a>";	
+		} else {
+		if ($edit=="Y") {
+			 echo "<a href='redirect.php?target=1&lookup=".$row['id']."'>";
+			echo min_list_names($row['id']);
+			echo "</a>";
+		}   else {
+				echo min_list_names($row['id']); 
+		}}
+				
+		echo "</strong><br />";
+		if ($show_conf=="Y") {
+			if (strlen($row['conference'])>0) { 
+				if ((strpos($row['conference'],"Union")===false) && (strpos($row['groups'],":".$u_group.":")===false) && (strpos($row['conference'],"Canada")===false)) { 	echo $row['conference']."$confText <br />";}
+				else { echo "<strong>".$row['conference']."$confText </strong></br />";}
+				if ((isset($row['conference_subgroup'])) && (strlen($row['conference_subgroup'])>0)) { echo $row['conference_subgroup']."<br />";}
+			}
+		}
+		if ($show_union=="Y") {
+			if (strlen($row['union_conf'])>0) { echo $row['union_conf']."<br />";}
+		}
+		if (strlen($row['title'])>0) { echo $row['title']."<br />"; }
+		if (strlen($row['address1'])>0) { echo $row['address1']."<br />"; }
+		if (strlen($row['address2'])>0) { echo $row['address2']."<br />"; }
+		if (strlen($row['city'].$row['state'].$row['zip'])>0) { echo $row['city']." ".$row['state']." ".$row['zip']."<br />"; }
+		else { // HOME ADDRESS
+			if (strlen($row['h_address1'])>0) { echo $row['h_address1']."<br />"; }
+			if (strlen($row['h_address2'])>0) { echo $row['h_address2']."<br />"; }
+			if (strlen($row['h_city'].$row['h_state'].$row['h_zip'])>0) { echo $row['h_city']." ".$row['h_state']." ".$row['h_zip']."<br />"; }	
+		}
+		if (!($row['country']=="USA")) {
+			if (strlen($row['country'])>0) { echo $row['country']."<br />";}
+		}
+		if (strlen($row['work_phone'])>0) {
+			$temp=strval(preg_replace("/[^0-9]+/","",$row['work_phone']));
+			if (strlen($temp)==10) { $phone=sew_display_formatted_phone($row['work_phone']);} else {$phone=$row['work_phone'];}
+			 echo "<strong>Phone:</strong> $phone<br />"; }
+		if ((strlen($row['email'])>0) && (strpos($row['email'],"BAD")==false)) { 
+			echo "<span style='font-weight:bold'>E-mail:</span> ".sew_spamSpan($row['email'])."<br />"; 
+		}
+		if ($show_groups=="Y") {
+			$group_array=min_list_groups($row['id']); $mytext="";
+			foreach ($group_array as $key=>$value) {
+				$value=str_replace(" ","&nbsp;",$value);
+				if ($show_dir=="Y") { $mytext.="&#8226; $value<br />";}
+					else {
+					if (strpos($value,"Director")===false)	{ $mytext.= "&#8226; $value<br />";}
+				}
+			}
+			if (!($mytext=="")) { echo "<div class='sws-groups' style='display: inline-block; margin-left: 10px;  font-size:11px'>$mytext</div>";}	
+		}
+		echo "</div>";
+	if ($outerDiv=="Y") { echo "</div>";}	
+		
+	}
+
 function ejj_dir_listing($row) {
 	
 
