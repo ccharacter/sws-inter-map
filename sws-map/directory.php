@@ -3,10 +3,8 @@
 
 echo getcwd();
 
-die();
-
-require_once 'assets/Db.php';
-require_once 'assets/dir_functions.php';
+require_once getcwd().'/assets/Db.php';
+require_once getcwd().'/assets/dir_functions.php';
 
 
 $_SESSION['sew']['which']="cm";
