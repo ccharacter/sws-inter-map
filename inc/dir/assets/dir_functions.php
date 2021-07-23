@@ -2,6 +2,47 @@
 
 //Eric's code
 
+function min_interactive_conf_divs($union_code="ANP",$u_group=7) {
+	
+	$my_min=$_SESSION['sew']['which'];
+	$db = new Db();	
+
+	$conf_array=array(); $k=0;
+	$sql2="select `id` from COMMON_temp_conf where `id` like '".$union_code."%'"; // echo $sql2;
+	$group_array = $db -> select($sql2); 
+	foreach ($group_array as $key=>$value) {
+		$row=$group_array[$k]['id']; 
+		array_push($conf_array,$row);
+		$k++;
+	}	
+	
+	
+	foreach ($conf_array as $mytemp) {
+
+echo "<div id='$mytemp' class='details hideClass' style='max-height: 360px;  overflow-y: auto;'>";
+
+$sql="select full_text as mytemp from COMMON_temp_conf where `id`='$mytemp'";
+$conf_name=$db->query($sql)->fetch_object()->mytemp;
+
+$sql="select * from dbi_master where conference=\"".$conf_name."\" and groups like '%:$u_group:%' order by lastname";
+$conf_array = $db -> select($sql); 
+	if (count($conf_array)>0) {
+			foreach ($conf_array as $key=>$value) {
+				echo "<hr />";
+				$row=$conf_array[$key];
+
+				min_directory($row,"N","N","Y","Y","N","Y",$u_group,"N","Y"); 
+// min_directory($row, $edit="Y", $show_groups="Y", $show_dir="Y", $show_conf="N", $show_union="N",$link_site="N", $u_group=4,$outerDiv="Y",$confWord="N")					
+			
+			} 
+		} else { echo "<hr /> NONE LISTED for <strong>$conf_name</strong></hr>";}
+
+
+echo "</div>";
+}
+
+}
+
 function min_list_union($union_name, $union, $expand="N",$edit="Y", $u_group=4, $link_site="N",$outerDiv="Y") {
 	
 	$db = new Db(); $my_min=$_SESSION['sew']['which'];	$k=0;
