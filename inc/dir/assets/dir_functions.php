@@ -5,7 +5,7 @@
 function min_interactive_conf_divs($union_code="ANP",$u_group=7) {
 	
 	$my_min=$_SESSION['sew']['which'];
-	$db = new Db();	
+	$db = new DB_map();	
 
 	$conf_array=array(); $k=0;
 	$sql2="select `id` from COMMON_temp_conf where `id` like '".$union_code."%'"; // echo $sql2;
@@ -45,7 +45,7 @@ echo "</div>";
 
 function min_list_groups($id,$ex="N") {
 	$my_min=$_SESSION['sew']['which'];
-	$db = new Db();
+	$db = new DB_map();
 	$result = array(); 
 	$sql="select groups as mytemp from dbi_master where id='$id' ";
 	$mygroups = $db->query($sql)->fetch_object()->mytemp;  
@@ -66,7 +66,7 @@ function min_list_groups($id,$ex="N") {
 
 function min_list_union($union_name, $union, $expand="N",$edit="Y", $u_group=4, $link_site="N",$outerDiv="Y") {
 	
-	$db = new Db(); $my_min=$_SESSION['sew']['which'];	$k=0;
+	$db = new DB_map(); $my_min=$_SESSION['sew']['which'];	$k=0;
 
 if ($outerDiv=="N") { echo "<div id='$union' style='clear:both; background-color: lavender; padding: 6px; max-height: 120px; overflow: auto'>"; } 
 	else { echo "<div id='$union' style='clear:both'>"; }
@@ -104,7 +104,7 @@ function min_list_names($index="X", $prefix="N", $mi="N") {
 	$name="";
 	if (is_null($index)) { return $name; } else {
 		if (!($index=="X")) { 
-			$db = new Db(); $my_min=$_SESSION['sew']['which'];
+			$db = new DB_map(); $my_min=$_SESSION['sew']['which'];
 			$sql="select * from dbi_master where id='$index'";
 			$query = $db->select($sql);
 			foreach ($query as $key=>$value) { 	$row=$query[$key];	}
