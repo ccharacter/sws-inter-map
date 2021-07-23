@@ -1,6 +1,9 @@
 <?php
 //session_start();
 
+echo getcwd();
+
+die();
 
 require_once 'assets/Db.php';
 require_once 'assets/dir_functions.php';
