@@ -117,14 +117,14 @@ foreach ($result as $key=>$value) {
   </div></td></tr>
     <tr>
       <td colspan="2" align="center">
-        <form id="form1" name="form1" method="post" action="" style='padding: 8px'>
+        <form id="form1" name="form1" method="post" action="" style='padding: 8px; display:flex;'>
           Displaying 
             <input name="radio" type="radio" id="showUS" value="us-map" checked="checked" />
-          <label for="radio"></label>
-      United States 
+          <label for="radio">
+      United States </label>
       <input type="radio" name="radio" id="showCAN" value="can-map" />
-      <label for="radio2"></label>
-Canada
+      <label for="radio2">
+Canada</label>
         </form></td>
       </tr>
 	  </table>
