@@ -1,9 +1,9 @@
 <?php
 //session_start();
 
-echo getcwd();
 
 require_once plugin_dir_path( __DIR__).'inc/dir/assets/Db.php';
+require_once plugin_dir_path( __DIR__).'inc/dir/assets/dir_functions.php';
 
 
 //require_once plugin_dir_path(__FILE__).'inc/dir/assets/Db.php';

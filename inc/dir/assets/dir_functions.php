@@ -43,6 +43,27 @@ echo "</div>";
 
 }
 
+function min_list_groups($id,$ex="N") {
+	$my_min=$_SESSION['sew']['which'];
+	$db = new Db();
+	$result = array(); 
+	$sql="select groups as mytemp from dbi_master where id='$id' ";
+	$mygroups = $db->query($sql)->fetch_object()->mytemp;  
+	$group_array=explode(":",$mygroups);
+	foreach ($group_array as $value) {
+		if ((strlen($value)>0) && (!(is_null($value)))) {
+			$sql2="select `grp_name` as mytemp from dbi_group_names where id='$value' ";
+			$group_name=$db->query($sql2)->fetch_object()->mytemp;
+			if (($ex=="Y") && (isset($_SESSION['sew']['groupEx']))) { // exclusive version
+				$tmpArr=explode("|",$_SESSION['sew']['groupEx']);
+				if (in_array($value,$tmpArr)) {  $result[$value]=$group_name; }
+			} else { $result[$value]=$group_name; }
+		}
+	}
+	sort($result);
+	return $result;
+}
+
 function min_list_union($union_name, $union, $expand="N",$edit="Y", $u_group=4, $link_site="N",$outerDiv="Y") {
 	
 	$db = new Db(); $my_min=$_SESSION['sew']['which'];	$k=0;
@@ -77,6 +98,24 @@ if ($outerDiv=="N") { echo "<div id='$union' style='clear:both; background-color
 	}
 	echo "</div>";	
 	
+}
+
+function min_list_names($index="X", $prefix="N", $mi="N") {
+	$name="";
+	if (is_null($index)) { return $name; } else {
+		if (!($index=="X")) { 
+			$db = new Db(); $my_min=$_SESSION['sew']['which'];
+			$sql="select * from dbi_master where id='$index'";
+			$query = $db->select($sql);
+			foreach ($query as $key=>$value) { 	$row=$query[$key];	}
+		}
+
+		if (($prefix=="Y") && (strlen($row['prefix'])>0)) { $name=$row['prefix']." "; }
+		if ($mi=="Y") {		$name.=$row['firstname']." ".$row['mi']." ".$row['lastname']; }
+			else { $name= $row['firstname']." ".$row['lastname']; }
+		if ($row['lastname']=="UNION") {$name.=" OFFICE";}
+	return $name;
+	}
 }
 
 function min_directory($row, $edit="Y", $show_groups="Y", $show_dir="Y", $show_conf="N", $show_union="N",$link_site="N", $u_group=4,$outerDiv="Y",$confWord="N") {
