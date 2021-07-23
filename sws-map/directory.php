@@ -57,6 +57,9 @@ function showOne(id) {
          
         });     
     </script>
+<style>
+input[type="radio"] { margin-left: 2rem !important; margin-right: .5rem !important; }
+</style>
 <div class='container' style='width:100%'>
 	<div style='width: 70%; text-align:center; margin-left: 15%; margin-right:auto;'>
 	  <table align="center">
