@@ -34,7 +34,7 @@ $db = new DB_map();
 -->
 
 <link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-<link href='<?php echo plugin_dir_path( __DIR__).'sws-map/assets'?>/dir_styles.css' rel='stylesheet' type='text/css'>
+<link href='<?php echo plugin_dir_url( __DIR__).'sws-map/assets'?>dir_styles.css' rel='stylesheet' type='text/css'>
 <script src="//min-db1.nadadventist.org/javascript/sew_spamspan.js"></script>
 <script type="text/javascript">
 function showOne(id) {
