@@ -34,25 +34,25 @@ $db = new DB_map();
 -->
 
 <link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-<link href='assets/dir_styles.css' rel='stylesheet' type='text/css'>
+<link href='<?php echo plugin_dir_path( __DIR__).'inc/dir/assets'?>/dir_styles.css' rel='stylesheet' type='text/css'>
 <script src="//min-db1.nadadventist.org/javascript/sew_spamspan.js"></script>
 <script type="text/javascript">
 function showOne(id) {
-    $('.details').not(id).addClass('hideClass');
-    $('#'+ id).removeClass('hideClass'); 	
+    jQuery('.details').not(id).addClass('hideClass');
+    jQuery('#'+ id).removeClass('hideClass'); 	
 }   
 </script>
 <script type="text/javascript">
-        $(document).ready(function() {
+        jQuery(document).ready(function() {
 		            
-         $("#showUS").click(function () {
-          $('#can-map').addClass('hideClass');
-          $('#us-map').removeClass('hideClass');
+         jQuery("#showUS").click(function () {
+          jQuery('#can-map').addClass('hideClass');
+          jQuery('#us-map').removeClass('hideClass');
             });
          
-            $("#showCAN").click(function () {
-          $('#us-map').addClass('hideClass');
-          $('#can-map').removeClass('hideClass'); 
+            jQuery("#showCAN").click(function () {
+          jQuery('#us-map').addClass('hideClass');
+          jQuery('#can-map').removeClass('hideClass'); 
             });
          
         });     
