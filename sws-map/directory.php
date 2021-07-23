@@ -18,9 +18,9 @@ $db = new DB_map();
 <script>
 	var count = 0;
 	var depth = 8;
-	$('document').ready(function(){
+	jQuery('document').ready(function(){
 	while (count < depth){
-    	$('#southwestern-union:hover').first().clone().appendTo('#southwestern-union:hover').css({"top" : count , "left" : count});
+    	jQuery('#southwestern-union:hover').first().clone().appendTo('#southwestern-union:hover').css({"top" : count , "left" : count});
 	count++;
   	}
 	});
