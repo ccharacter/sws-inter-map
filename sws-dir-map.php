@@ -169,7 +169,7 @@ function sws_interactive_map_func($atts) {
 		$vars[$key]=$value;
 	} // NOTE TO SELF: SHORTCODE_ATTS DOESN'T LIKE UPPERCASE!!!!
 	
-	error_log(print_r($vars,true),0);
+	// error_log(print_r($vars,true),0);
 	// construct the string being passed to the initial page
 	//$getVar=urlencode(base64_encode(json_encode($vars)));
 	//error_log($getVar);
