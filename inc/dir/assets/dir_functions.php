@@ -2,6 +2,19 @@
 
 //Eric's code
 
+function sew_display_formatted_phone($input, $tag="") {
+	$output="";
+	if (strlen($input)>0) {
+		if (strlen($tag)>0) { $tag=" (".$tag.") ";}
+		$temp=preg_replace("/[^0-9]+/","",substr($input,0,10));
+		if (strlen($temp)>6) {
+			$temp2=substr($input,10,strlen($input));
+			$output="(".substr($temp,0,3).") ".substr($temp,3,3)."-".substr($temp,6,4).$temp2.$tag;
+		} else {$output=$input.$tag;}
+	}
+	return $output;	
+}	
+
 function min_interactive_conf_divs($union_code="ANP",$u_group=7) {
 	
 	$my_min=$_SESSION['sew']['which'];
