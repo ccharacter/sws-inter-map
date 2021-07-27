@@ -2,6 +2,17 @@
 
 //Eric's code
 
+
+function sew_retrieve_itemname ($fieldname, $tablename, $id, $idcol='id', $st_id=0) {
+	$db = new Db(); $mytext="";
+	$sql="Select `$fieldname` as mytemp from $tablename where `$idcol`='$id'";
+	$result=$db->query($sql);
+	foreach ($result as $row) {	
+		$mytext=$row['mytemp'];
+	}
+	return $mytext;	
+}
+
 function sew_spamSpan($email) {
 
 	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {	
