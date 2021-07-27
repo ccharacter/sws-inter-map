@@ -4,7 +4,7 @@
 
 
 function sew_retrieve_itemname ($fieldname, $tablename, $id, $idcol='id', $st_id=0) {
-	$db = new Db(); $mytext="";
+	$db = new Db_map(); $mytext="";
 	$sql="Select `$fieldname` as mytemp from $tablename where `$idcol`='$id'";
 	$result=$db->query($sql);
 	foreach ($result as $row) {	
