@@ -1,7 +1,7 @@
 <?php
 //session_start();
 
-echo getcwd();
+// echo getcwd();
 
 require_once '../inc/dir/assets/Db.php';
 require_once '../inc/dir/assets/dir_functions.php';
