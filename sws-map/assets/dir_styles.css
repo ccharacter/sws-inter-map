@@ -69,9 +69,15 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 		overflow: visible;
 	}
 
+	#ejj_container {
+		display: flex;
+		width: 90vw;
+		margin-left: 5vw;
+	}
+
 	.column2 {
-		width: 40%;
-		float: left;
+		/* width: 40%;
+		float: left; */
 		margin-top:3em;
 		margin-left: 3em;
 	}
