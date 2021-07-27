@@ -2,6 +2,22 @@
 
 //Eric's code
 
+function min_interactive_state_divs($u_code,$u_group=7) {
+	
+	
+	$my_min=$_SESSION['sew']['which'];
+	$db = new Db_map();
+
+	$state_array=array(); $k=0;
+	$sql2="SELECT * from COMMON_state_conf where state_union=(select full_text from COMMON_temp_union where id='".$u_code."') group by state_abbr order by state_conf"; 
+	if ($u_code=="AN6") { $sql2="SELECT * from COMMON_state_conf where state_union='SDA Church in Canada' group by state_abbr order by state_conf"; }
+	$group_array = $db -> select($sql2); 
+	foreach ($group_array as $key=>$value) {
+		$row=$group_array[$k]['state_abbr']; 
+		array_push($state_array,$row);
+		$k++;
+	}
+
 
 function sew_retrieve_itemname ($fieldname, $tablename, $id, $idcol='id', $st_id=0) {
 	$db = new Db_map(); $mytext="";
