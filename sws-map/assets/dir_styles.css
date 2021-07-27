@@ -57,9 +57,9 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	
 		.column1 {
     	position: relative; 
-		width: 55%;
+		/* width: 55%; */
 		max-height: 75%;
-		float: left;
+		/* float: left; */
 		padding: 2.5%;
 	}
 	
@@ -80,6 +80,10 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 		float: left; */
 		margin-top:3em;
 		margin-left: 3em;
+	}
+
+	.colum2 > div {
+		overflow: !important;
 	}
 	
 	.u-title {
