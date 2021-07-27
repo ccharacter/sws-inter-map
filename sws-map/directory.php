@@ -1,20 +1,26 @@
 <?php
 //session_start();
 
+echo getcwd();
 
-require_once plugin_dir_path( __DIR__).'inc/dir/assets/Db.php';
-require_once plugin_dir_path( __DIR__).'inc/dir/assets/dir_functions.php';
-
-
-//require_once plugin_dir_path(__FILE__).'inc/dir/assets/Db.php';
-//require_once("../../functions/Db.php");
-//require_once("../../functions/functions_sew.php");
-//require_once("../../dbi/min_functions.php");
+require_once '../inc/dir/assets/Db.php';
+require_once '../inc/dir/assets/dir_functions.php';
 
 
 $_SESSION['sew']['which']="cm";
 $db = new DB_map();
 ?>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+<link href='assets/dir_styles.css' rel='stylesheet' type='text/css'>
+<script src="//min-db1.nadadventist.org/javascript/sew_spamspan.js"></script>
+
 <script>
 	var count = 0;
 	var depth = 8;
@@ -26,15 +32,6 @@ $db = new DB_map();
 	});
 	
 </script>
-<!--
-PUT THESE BACK LATER
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<link href='//fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-<link href='assets/dir_styles.css' rel='stylesheet' type='text/css'>
-<script src="//min-db1.nadadventist.org/javascript/sew_spamspan.js"></script>
--->
 <script type="text/javascript">
 function showOne(id) {
     $('.details').not(id).addClass('hideClass');
@@ -56,6 +53,9 @@ function showOne(id) {
          
         });     
     </script>
+<style>
+input[type="radio"] { margin-left: 2rem !important; margin-right: .5rem !important; }
+</style>
 <div class='container' style='width:100%'>
 	<div style='width: 70%; text-align:center; margin-left: 15%; margin-right:auto;'>
 	  <table align="center">
@@ -116,14 +116,14 @@ foreach ($result as $key=>$value) {
   </div></td></tr>
     <tr>
       <td colspan="2" align="center">
-        <form id="form1" name="form1" method="post" action="" style='padding: 8px'>
+        <form id="form1" name="form1" method="post" action="" style='padding: 8px; display:flex;'>
           Displaying 
             <input name="radio" type="radio" id="showUS" value="us-map" checked="checked" />
-          <label for="radio"></label>
-      United States 
+          <label for="radio">
+      United States </label>
       <input type="radio" name="radio" id="showCAN" value="can-map" />
-      <label for="radio2"></label>
-Canada
+      <label for="radio2">
+Canada</label>
         </form></td>
       </tr>
 	  </table>
