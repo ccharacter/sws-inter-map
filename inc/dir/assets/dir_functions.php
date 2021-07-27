@@ -17,7 +17,7 @@ function min_interactive_state_divs($u_code,$u_group=7) {
 		array_push($state_array,$row);
 		$k++;
 	}
-
+}
 
 function sew_retrieve_itemname ($fieldname, $tablename, $id, $idcol='id', $st_id=0) {
 	$db = new Db_map(); $mytext="";
@@ -763,4 +763,3 @@ function sew_get_custom($record_id,$field_id,$min="fam") {
 
 
 ?>
-
