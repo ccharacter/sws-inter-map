@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-echo getcwd();
+// echo getcwd();
 
 require_once '../inc/dir/assets/Db.php';
 require_once '../inc/dir/assets/dir_functions.php';
@@ -53,7 +53,7 @@ function showOne(id) {
 
 <div class='container' style='width:100%'>	
   <p style='padding: 8px; text-align:center; '>Hover/click a state/province to see contact information for Children's Ministries leadership.<br /><a href='directory.php'><strong>BACK TO DIVISION</strong></a></p>
-  <div style='margin-top:-25px'>
+  <div id="ejj_container" style='margin-top:-25px'>
 <?php  include $fileName; ?>
 	<div class="column2">
 <?php  

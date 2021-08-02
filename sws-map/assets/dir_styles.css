@@ -82,8 +82,8 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 		margin-left: 3em;
 	}
 
-	.colum2 > div {
-		overflow: !important;
+	.column2 > div {
+		overflow: visible;
 	}
 	
 	.u-title {
