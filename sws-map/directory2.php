@@ -57,6 +57,7 @@ function showOne(id) {
   <div id="ejj_container" style='margin-top:-25px'>
 <?php  
 	if (!($fileName=="ANN.php")) {
+		error_log("test this", 0);
 		include $fileName; 
 	} ?>
 	<div class="column2">
