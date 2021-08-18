@@ -54,7 +54,10 @@ function showOne(id) {
 <div class='container' style='width:100%'>	
   <p style='padding: 8px; text-align:center; '>Hover/click a state/province to see contact information for Children's Ministries leadership.<br /><a href='directory.php'><strong>BACK TO DIVISION</strong></a></p>
   <div id="ejj_container" style='margin-top:-25px'>
-<?php  include $fileName; ?>
+<?php  
+	if (!($fileName=="ANN.php")) {
+		include $fileName; 
+	} ?>
 	<div class="column2">
 <?php  
 if ((!(isset($_GET['s']))) || (!($_GET['s']=="GU"))) {
