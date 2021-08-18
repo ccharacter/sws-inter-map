@@ -68,7 +68,7 @@ min_interactive_conf_divs($id);
 	
 	echo "<h3>Guam-Micronesia Mission</h3>";
 	
-	$sql="select * from ".$my_min.".".$my_min."_master where conference like \"%Guam%\" and groups like '%:7:%' order by lastname"; error_log($sql,0); 
+	$sql="select * from dbi_master where conference like \"%Guam%\" and groups like '%:7:%' order by lastname"; error_log($sql,0); 
 $conf_array = $db -> select($sql); 
 	if (count($conf_array)>0) {
 			foreach ($conf_array as $key=>$value) {
