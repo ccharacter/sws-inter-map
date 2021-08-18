@@ -2,6 +2,8 @@
 
 //Eric's code
 
+//test
+
 function min_interactive_state_divs($u_code,$u_group=7) {
 	
 	
