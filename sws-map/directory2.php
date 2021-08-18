@@ -16,7 +16,7 @@ if (isset($_GET['id'])) {
 } else {$id="ANP";}
 
   $fileName=$id.".php";
-  $u_name=sew_retrieve_itemname("full_text","common.temp_union",$id,"id");
+  $u_name=sew_retrieve_itemname("full_text","COMMON_temp_union",$id,"id");
 	
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
