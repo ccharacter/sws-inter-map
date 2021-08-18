@@ -243,7 +243,7 @@ function min_directory($row, $edit="Y", $show_groups="Y", $show_dir="Y", $show_c
 		echo "</div>";
 	if ($outerDiv=="Y") { echo "</div>";}	
 		
-	}
+}
 
 function ejj_dir_listing($row) {
 	

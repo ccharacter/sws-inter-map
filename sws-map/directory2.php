@@ -68,14 +68,14 @@ min_interactive_conf_divs($id);
 	
 	echo "<h3>Guam-Micronesia Mission</h3>";
 	
-	$sql="select * from dbi_master where conference like \"%Guam%\" and groups like '%:7:%' order by lastname"; error_log($sql,0); 
+	$sql="select * from dbi_master where conference like \"%Guam%\" and groups like '%:7:%' order by lastname"; //error_log($sql,0); 
 $conf_array = $db -> select($sql); 
 	if (count($conf_array)>0) {
 			foreach ($conf_array as $key=>$value) {
 				echo "<hr />";
 				$row=$conf_array[$key];
-				error_log(print_r($row,true),0); 
-				min_directory($row,"N","N","Y","Y","N","Y",$u_group,"N","Y"); 
+				//error_log(print_r($row,true),0); 
+				min_directory($row,"N","N","Y","Y","N","Y",4,"N","Y"); 
 // min_directory($row, $edit="Y", $show_groups="Y", $show_dir="Y", $show_conf="N", $show_union="N",$link_site="N", $u_group=4,$outerDiv="Y",$confWord="N")					
 			
 			} 
