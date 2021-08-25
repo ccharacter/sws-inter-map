@@ -186,7 +186,7 @@ function min_directory($row, $edit="Y", $show_groups="Y", $show_dir="Y", $show_c
 function ejj_dir_listing($row) {
 	
 
-	error_log(print_r($row, true), 0);
+	//error_log(print_r($row, true), 0);
 	$ministry=$_SESSION['sws']['min_title'];
 	
 	echo "<div style='margin-left:1.5em; margin-top:0;'><strong>";
@@ -196,7 +196,7 @@ function ejj_dir_listing($row) {
 
 	if (strlen($row['address1'])>0) { echo $row['address1']."<br />"; }
 	if (strlen($row['address2'])>0) { echo $row['address2']."<br />"; }
-	echo $row['city']." ".$row['state']." ".$row['zip']."<br />";
+	if (strlen($row['city'].$row['state'].$row['zip'])>0) { echo $row['city']." ".$row['state']." ".$row['zip']."<br />"; }
 	if (!($row['country']=="USA")) {
 		if (strlen($row['country'])>0) { echo $row['country']."<br />";}
 	}
