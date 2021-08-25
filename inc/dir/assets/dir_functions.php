@@ -237,6 +237,7 @@ function ejj_list_unions($title="Men's Ministries") {
 
 function ejj_list_dir_by_union($unionCode) {
 
+	$showNAD=$_SESSION['sws']['include_nad'];
 	$ministry=$_SESSION['sws']['min_title'];
 	$group=$_SESSION['sws']['group'];
 	$group_id=$_SESSION['sws']['group_id'];
@@ -653,7 +654,7 @@ function sws_dir_titles($row) {
 	$title="";
 	$ministry=$_SESSION['sws']['min_title'];
 
-	if (!(strpos($row['title'],$ministry)===false)) { 	
+	if ((strlen($row['title'])>0)) { 	
 		$title= $row['title'];
 	} else {			
 		if (
