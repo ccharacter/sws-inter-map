@@ -52,17 +52,17 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	grid-template-rows: auto 75%;
 	grid-template-areas:
 	"header header"
-	"column1 column2";
+	"column1 column2"
+	"map map";
 }
 
 .dir1_nav {
 	grid-area: header;
-	width: 600px;
-	max-height: 800px;
+	text-align:center;
 }
 
 .us-map {
-	grid-area: column1 + column2;
+	grid-area: map;
 
 }
 .hideClass { 
