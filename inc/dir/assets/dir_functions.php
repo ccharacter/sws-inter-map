@@ -243,7 +243,7 @@ function ejj_list_dir_by_union($unionCode) {
 	if ($unionCode=="AN6") { 
 		$union="%Canad"; $unionName="Seventh-day Adventist Church in Canada";
 	} elseif ($unionCode=="ANNG") {
-		$unionCode="Guam"; $unionName="Guam-Micronesia Mission";
+		$unionCode="Guam"; $unionName="Guam-Micronesia Mission"; $union="Guam";
 	} else {
 		$unionName=$union;
 		$union= $db->query("select full_text from COMMON_temp_union where id='$unionCode' ")->fetch_object()->full_text;
