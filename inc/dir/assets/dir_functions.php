@@ -241,14 +241,15 @@ function ejj_list_dir_by_union($unionCode) {
 	
 	$db = new DB_map();
 	if ($unionCode=="AN6") { 
-		$union="%Canad";
+		$union="%Canad"; $unionName="Seventh-day Adventist Church in Canada";
 	} elseif ($unionCode=="ANNG") {
-		$unionCode="Guam";
+		$unionCode="Guam"; $unionName="Guam-Micronesia Mission";
 	} else {
+		$unionName=$union;
 		$union= $db->query("select full_text from COMMON_temp_union where id='$unionCode' ")->fetch_object()->full_text;
 	}
 
-	echo "<h3>$ministry Leadership in the $union</h3><div class='dirlist_div'>";
+	echo "<h3>$ministry Leadership in the $unionName</h3><div class='dirlist_div'>";
 	
 	$sql="select * from dbi_master where $groupCond and union_conf like '".$union."%' and (conference like '".$union."%' or conference='' or conference like '%Union%' or conference is null)";  //error_log($sql,0);
 
