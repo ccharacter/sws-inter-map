@@ -52,8 +52,7 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	grid-template-rows: auto 75%;
 	grid-template-areas:
 	"header header"
-	"column1 column2"
-	"map map";
+	"column1 column2";
 }
 
 .dir1_nav {
@@ -61,8 +60,8 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	text-align:center;
 }
 
-.us-map {
-	grid-area: map;
+#us-map {
+	grid-area: column1 / column2;
 
 }
 .hideClass { 
