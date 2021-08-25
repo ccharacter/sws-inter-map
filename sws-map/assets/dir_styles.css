@@ -51,15 +51,19 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto 75%;
 	grid-template-areas:
-	"header header""column1 column2";
+	"header header"
+	"column1 column2";
 }
 
 .dir1_nav {
 	grid-area: header;
+	width: 600px;
+	max-height: 800px;
 }
 
 .us-map {
 	grid-area: column1 column2;
+
 }
 .hideClass { 
 	display: none;
