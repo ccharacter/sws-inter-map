@@ -29,7 +29,7 @@ var spamSpanParams			= new Array('subject', 'body');
 addEvent(window, 'load', sew_spamSpan);
 
 function sew_spamSpan() {
-	console.log('TEST');
+	//console.log('TEST');
 	var allSpamSpans = getElementsByClass(spamSpanMainClass, document, 'span');
 	for (var i = 0; i < allSpamSpans.length; i++) {
 		// get data
