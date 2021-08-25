@@ -240,13 +240,12 @@ function ejj_list_dir_by_union($unionCode) {
 	} else { $groupCond="groups like '%:$group_id:%'"; }
 	
 	$db = new DB_map();
-	if (!($unionCode=="ANNG")) {
-		$union= $db->query("select full_text from COMMON_temp_union where id='$unionCode' ")->fetch_object()->full_text;
-	} elseif ($unionCode=="AN6") { 
+	if ($unionCode=="AN6") { 
 		$union="%Canada";
-	} else {
-		$union= $db->query("select full_text from COMMON_temp_conf where id='$unionCode' ")->fetch_object()->full_text;  
+	} elseif ($unionCode=="ANNG") {
 		$unionCode="Guam";
+	} else {
+		$union= $db->query("select full_text from COMMON_temp_union where id='$unionCode' ")->fetch_object()->full_text;
 	}
 
 	echo "<h3>$ministry Leadership in the $union</h3><div class='dirlist_div'>";
