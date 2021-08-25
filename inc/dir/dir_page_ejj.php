@@ -27,7 +27,6 @@ if (isset($_GET['vars'])) { // process url vars
 }
 
 sws_iframe_head();
-sws_iframe_head();
 
 ?>
 <style>
