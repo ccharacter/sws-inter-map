@@ -38,6 +38,7 @@ function sws_dir_show($atts) {
 	$a=shortcode_atts(array(
 	  'group' => 'conf_asam',
 	  'group2' => 'X',
+	  'include_nad'=>'N',
 	  'all_conf'=> 'Y',
 	  'group_by_conf'=>'Y',
 	  'min_title' => 'ASAM',
@@ -110,6 +111,7 @@ function ejj_photo_dir($atts) {
 	  'group' => 'conf_asam',
 	  'group2' => 'X',
 	  'all_conf'=> 'Y',
+	  'include_nad'=>'N',
 	  'group_by_conf'=>'Y',
 	  'min_title' => 'ASAM',
 	  'show_prefixes' => "Y"
