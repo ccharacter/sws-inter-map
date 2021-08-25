@@ -217,6 +217,11 @@ function ejj_list_unions($title="Men's Ministries") {
 		<ul class='dirlist_unions'>";	
 
 	$db = new DB_map();
+	
+	if ((isset($_SESSION['sws']['include_nad'])) && ($_SESSION['sws']['include_nad']=="Y")) {
+		echo "<li><a href='dir_page_ejj.php?u=NAD'>North American Division</a><br />&nbsp;</li>";	
+	}
+	
 	$union_array = $db -> select("select * from COMMON_temp_union order by full_text"); 
 	
 	foreach ($union_array as $key=>$value) {
