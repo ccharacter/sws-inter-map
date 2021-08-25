@@ -59,6 +59,7 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	/* SECONDARY PAGE */
 
 	.dir2_nav {
+		position: relative;
 		grid-area: header;
 	}
 	
