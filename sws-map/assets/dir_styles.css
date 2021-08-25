@@ -53,6 +53,14 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	grid-template-areas:
 	"header header""column1 column2";
 }
+
+.dir1_nav {
+	grid-area: header;
+}
+
+.us-map {
+	grid-area: column1 column2;
+}
 .hideClass { 
 	display: none;
 }

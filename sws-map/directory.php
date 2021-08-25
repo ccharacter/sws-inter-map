@@ -57,7 +57,7 @@ function showOne(id) {
 input[type="radio"] { margin-left: 2rem !important; margin-right: .5rem !important; }
 </style>
 <div class='container' style='width:100%'>
-	<div style='width: 70%; text-align:center; margin-left: 15%; margin-right:auto;'>
+	<div class= 'dir1_nav' style='width: 70%; text-align:center; margin-left: 15%; margin-right:auto;'>
 	  <table align="center">
       <tr><td colspan='2'><p style='padding: 8px'>Hover/click a region on the map for more information, or choose from the lists below.</p></td></tr>
     <tr>
