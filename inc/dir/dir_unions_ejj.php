@@ -23,7 +23,7 @@ if (isset($_GET['vars'])) { // process url vars
 		foreach ($tmp as $tmp2) {
 			$tmp2=trim($tmp2);
 			error_log("HAS GROUP $tmp2",0);
-			sws_get_group($tmp2,"group_id$k");
+			sws_get_group_id($tmp2,"group_id$k");
 			$k++;
 		}
 	}
