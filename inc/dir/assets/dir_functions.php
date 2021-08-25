@@ -241,8 +241,10 @@ function ejj_list_dir_by_union($unionCode) {
 	$ministry=$_SESSION['sws']['min_title'];
 	$group=$_SESSION['sws']['group'];
 	$group_id=$_SESSION['sws']['group_id'];
-	if (isset($_SESSION['sws']['group_id2'])) { // adapt for multiple groups
-		$groupCond="(groups like '%:$group_id:%' OR groups like '%:".$_SESSION['sws']['group_id2'].":%')"; 
+
+	if (isset($_SESSION['sws']['group2'])) { // adapt for multiple groups
+		$group_id2=$_SESSION['sws']['group_id2'];
+		$groupCond="(groups like '%:$group_id:%' OR groups like '%:$group_id2:%')"; 
 	} else { $groupCond="groups like '%:$group_id:%'"; }
 	
 	$db = new DB_map();
