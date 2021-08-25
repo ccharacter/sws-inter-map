@@ -49,6 +49,9 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 2em;
+	grid-template-columns: 
+	"header header"
+	"column1 / spam2";
 }
 .hideClass { 
 	display: none;
