@@ -241,7 +241,7 @@ function ejj_list_dir_by_union($unionCode) {
 	
 	$db = new DB_map();
 	if ($unionCode=="AN6") { 
-		$union="%Canada";
+		$union="%Canad";
 	} elseif ($unionCode=="ANNG") {
 		$unionCode="Guam";
 	} else {
@@ -250,7 +250,7 @@ function ejj_list_dir_by_union($unionCode) {
 
 	echo "<h3>$ministry Leadership in the $union</h3><div class='dirlist_div'>";
 	
-	$sql="select * from dbi_master where $groupCond and union_conf like '".$union."%' and (conference like '%".$union."%' or conference='' or conference like '%Union%' or conference is null)";  error_log($sql,0);
+	$sql="select * from dbi_master where $groupCond and union_conf like '".$union."%' and (conference like '".$union."%' or conference='' or conference like '%Union%' or conference is null)";  error_log($sql,0);
 
 	
 	$union_array = $db -> select($sql); 
