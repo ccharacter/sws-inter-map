@@ -109,7 +109,6 @@ function ejj_photo_dir($atts) {
 
 	$a=shortcode_atts(array(
 	  'group' => 'conf_asam',
-	  'group2' => 'X',
 	  'all_conf'=> 'Y',
 	  'include_nad'=>'N',
 	  'nad_title'=>'North American Division',

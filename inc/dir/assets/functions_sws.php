@@ -3,11 +3,12 @@
 // GENERAL FUNCTIONS USED BY MULTIPLE SITES/FILES
 
 function sws_get_group_id($group_name="staff",$which="group_id") {
-
-	$db = new DB_map();
-	$myVal=$db->query("select `id` as mytemp from dbi_group_names where `descr`='$group_name'")->fetch_object()->mytemp; 
-	if (!$myVal) { $myVal=5; }
-	$_SESSION['sws'][$which]=$myVal;
+	if (!($group_name=="X")) { 
+		$db = new DB_map();
+		$myVal=$db->query("select `id` as mytemp from dbi_group_names where `descr`='$group_name'")->fetch_object()->mytemp; 
+		if (!$myVal) { $myVal=5; }
+		$_SESSION['sws'][$which]=$myVal;
+	}
 }
 
 function sws_iframe_head($themedir="X",$themedir2="X") { 

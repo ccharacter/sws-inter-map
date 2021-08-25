@@ -16,8 +16,17 @@ if (isset($_GET['vars'])) { // process url vars
 		${$key}=$value;
 		//error_log($key."|".$value,0);
 	}
-	sws_get_group_id($group);
-	if (isset($group2)) { error_log("HAS GROUP 2",0); sws_get_group_id($group2,'group_id2'); }
+	if (strpos($group,",")===false) { // only one group
+		sws_get_group_id($group);
+	} else { // multiple groups
+		$tmp=explode(",",$group); $k=2;
+		foreach ($tmp as $tmp2) {
+			$tmp2=trim($tmp2);
+			error_log("HAS GROUP $tmp2",0);
+			sws_get_group($tmp2,"group_id$k");
+			$k++;
+		}
+	}
 } else {
 	foreach ($_SESSION['sws'] as $key=>$value) {
 		${$key}=$value;
