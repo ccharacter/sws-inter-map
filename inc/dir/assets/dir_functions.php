@@ -186,7 +186,7 @@ function min_directory($row, $edit="Y", $show_groups="Y", $show_dir="Y", $show_c
 function ejj_dir_listing($row) {
 	
 
-	// error_log(print_r($row, true), 0);
+	error_log(print_r($row, true), 0);
 	$ministry=$_SESSION['sws']['min_title'];
 	
 	echo "<div style='margin-left:1.5em; margin-top:0;'><strong>";
