@@ -112,6 +112,7 @@ function ejj_photo_dir($atts) {
 	  'group2' => 'X',
 	  'all_conf'=> 'Y',
 	  'include_nad'=>'N',
+	  'nad_title'=>'North American Division',
 	  'group_by_conf'=>'Y',
 	  'min_title' => 'ASAM',
 	  'show_prefixes' => "Y"
