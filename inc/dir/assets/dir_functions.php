@@ -304,6 +304,8 @@ function ejj_list_dir_by_union($unionCode) {
 	if ($unionCode=="Guam") { // modify the query
 		$sqlC=str_replace("union_conf like '".$union."%'","conference like '%Guam%' ",$sqlC);
 		//echo $sqlC;
+	} elseif ($unionCode=="NAD") {
+		$sqlC=str_replace("and conference is not null and conference!='' and conference not like '%Adventist%'","",$sqlC);			
 	}
 	
 	$conf_array = $db -> select($sqlC);
