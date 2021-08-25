@@ -2,6 +2,8 @@
 
 body {
 	font-family: 'Questrial', sans-serif;
+	display: grid;
+	margin: 2em;
 }
 	
 a:focus, a:hover  { 
@@ -61,8 +63,8 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	}
 	
 	svg {
-		width: 400px;
-		max-height: 600px;
+		width: 600px;
+		max-height: 800px;
 	}
 
 	#ejj_container {
