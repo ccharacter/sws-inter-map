@@ -245,8 +245,8 @@ function ejj_list_dir_by_union($unionCode) {
 	} elseif ($unionCode=="ANNG") {
 		$unionCode="Guam"; $unionName="Guam-Micronesia Mission"; $union="Guam";
 	} else {
-		$unionName=$union;
 		$union= $db->query("select full_text from COMMON_temp_union where id='$unionCode' ")->fetch_object()->full_text;
+		$unionName=$union;
 	}
 
 	echo "<h3>$ministry Leadership in the $unionName</h3><div class='dirlist_div'>";
