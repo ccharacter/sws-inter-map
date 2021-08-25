@@ -48,7 +48,7 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	margin:0;
 	display: grid;
 	gap: 2em;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto 75%;
 	grid-template-areas:
 	"header header""column1 column2";
@@ -59,7 +59,6 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	/* SECONDARY PAGE */
 
 	.dir2_nav {
-		position: relative;
 		grid-area: header;
 	}
 	
