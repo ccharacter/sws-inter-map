@@ -241,6 +241,8 @@ function ejj_list_dir_by_union($unionCode) {
 	$ministry=$_SESSION['sws']['min_title'];
 	$group=$_SESSION['sws']['group'];
 	$group_id=$_SESSION['sws']['group_id'];
+	
+	error_log(print_r($_SESSION,true),0);
 
 	if (isset($_SESSION['sws']['group2'])) { // adapt for multiple groups
 		$group_id2=$_SESSION['sws']['group_id2'];
