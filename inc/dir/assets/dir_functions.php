@@ -242,6 +242,8 @@ function ejj_list_dir_by_union($unionCode) {
 	$db = new DB_map();
 	if (!($unionCode=="ANNG")) {
 		$union= $db->query("select full_text from COMMON_temp_union where id='$unionCode' ")->fetch_object()->full_text;
+	} elseif ($unionCode=="AN6") { 
+		$union="%Canada";
 	} else {
 		$union= $db->query("select full_text from COMMON_temp_conf where id='$unionCode' ")->fetch_object()->full_text;  
 		$unionCode="Guam";
