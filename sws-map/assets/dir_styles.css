@@ -56,11 +56,8 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	/* SECONDARY PAGE */
 	
 		.column1 {
-    	position: relative; 
-		/* width: 55%; */
-		max-height: 75%;
-		/* float: left; */
-		padding: 2.5%;
+			width: 100%;
+			height: auto;
 	}
 	
 	svg {
