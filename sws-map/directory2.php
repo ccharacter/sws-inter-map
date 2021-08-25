@@ -53,7 +53,7 @@ function showOne(id) {
 </script>
 
 <div class='container' style='width:100%'>	
-  <p style='padding: 8px; text-align:center; '>Hover/click a state/province to see contact information for Children's Ministries leadership.<br /><a href='directory.php'><strong>BACK TO DIVISION</strong></a></p>
+  <p class='dir2_nav' navstyle='padding: 8px; text-align:center; '>Hover/click a state/province to see contact information for Children's Ministries leadership.<br /><a href='directory.php'><strong>BACK TO DIVISION</strong></a></p>
   <div id="ejj_container" style='margin-top:-25px'>
 <?php  
 	if (!($fileName=="ANN.php")) {

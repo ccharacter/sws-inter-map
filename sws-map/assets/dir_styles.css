@@ -51,17 +51,19 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	gap: 2em;
 	grid-template-columns: 
 	"header header"
-	"column1 / spam2";
+	"column1 / column2";
 }
 .hideClass { 
 	display: none;
 }
-
-
-
 	/* SECONDARY PAGE */
+
+	.dir2_nav {
+		grid-area: header;
+	}
 	
 		.column1 {
+			grid-area: column1;
 			width: 100%;
 			height: auto;
 	}
@@ -72,6 +74,7 @@ background-image: linear-gradient(to bottom,#459bc0 0,#1682B0 100%);
 	}
 
 	.column2 {
+		grid-area: column2;
 		width: 100%;
 		height: auto;
 	}
