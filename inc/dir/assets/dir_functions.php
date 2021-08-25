@@ -246,7 +246,7 @@ function ejj_list_dir_by_union($unionCode) {
 
 	$groupCond="";
 	foreach ($_SESSION['sws'] as $key=>$value) {
-		if (substr($loop,0,8)=="group_id") { 
+		if (substr($key,0,8)=="group_id") { 
 			if (strlen($groupCond)>0) { $groupCond.=" OR "; }
 			$groupCond.=" groups like '%:$value:%'";
 		}
