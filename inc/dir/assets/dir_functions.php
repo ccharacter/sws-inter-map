@@ -244,7 +244,7 @@ function ejj_list_dir_by_union($unionCode) {
 	
 	error_log(print_r($_SESSION,true),0);
 
-	if ((isset($_SESSION['sws']['group2'])) || (isset($_SESSION['sws']['group3']))) } { // adapt for multiple groups
+	if ((isset($_SESSION['sws']['group2'])) || (isset($_SESSION['sws']['group3'])))  { // adapt for multiple groups
 		$groupCond="(groups like '%:$group_id:%'";
 
 		if (isset($_SESSION['sws_group_id2'])) {
