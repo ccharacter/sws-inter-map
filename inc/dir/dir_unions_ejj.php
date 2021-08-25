@@ -19,7 +19,7 @@ if (isset($_GET['vars'])) { // process url vars
 	if (strpos($group,",")===false) { // only one group
 		sws_get_group_id($group);
 	} else { // multiple groups
-		$tmp=explode(",",$group); $k=2;
+		$tmp=explode(",",$group); $k=0;
 		foreach ($tmp as $tmp2) {
 			$tmp2=trim($tmp2);
 			error_log("HAS GROUP $tmp2",0);

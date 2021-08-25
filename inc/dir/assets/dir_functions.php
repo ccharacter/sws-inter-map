@@ -244,20 +244,14 @@ function ejj_list_dir_by_union($unionCode) {
 	
 	error_log(print_r($_SESSION,true),0);
 
-	if ((isset($_SESSION['sws']['group2'])) || (isset($_SESSION['sws']['group3'])))  { // adapt for multiple groups
-		$groupCond="(groups like '%:$group_id:%'";
-
-		if (isset($_SESSION['sws_group_id2'])) {
-			$group_id2=$_SESSION['sws']['group_id2'];
-			$groupCond.=" OR groups like '%:$group_id2:%'"; 
+	$groupCond="";
+	foreach ($_SESSION['sws'] as $key=>$value) {
+		if (substr($loop,0,8)=="group_id") { 
+			if (strlen($groupCond)>0) { $groupCond.=" OR "; }
+			$groupCond.=" groups like '%:$value:%'";
 		}
-		if (isset($_SESSION['sws_group_id3'])) {
-			$group_id3=$_SESSION['sws']['group_id3'];
-			$groupCond.=" OR groups like '%:$group_id3:%'"; 
-		}
-
-		$groupCond.=")";
-	} else { $groupCond="groups like '%:$group_id:%'"; }
+	}
+	$groupCond="(".$groupCond.")";
 	
 	$db = new DB_map();
 	if ($unionCode=="AN6") { 
