@@ -299,7 +299,7 @@ function ejj_list_dir_by_union($unionCode) {
 	}
 
 	// cycle through conference personnel
-	$sqlC="select * from dbi_master where union_conf like '".$union."%' and $groupCond and conference not like '%Union%' and conference is not null and conference!='' and conference not like '%Adventist%' order by conference"; 	 error_log($sqlC,0);
+	$sqlC="select * from dbi_master where union_conf like '".$union."%' and $groupCond and conference not like '%Union%' and conference is not null and conference!='' and conference not like '%Adventist%' order by conference"; 	 
 
 	if ($unionCode=="Guam") { // modify the query
 		$sqlC=str_replace("union_conf like '".$union."%'","conference like '%Guam%' ",$sqlC);
@@ -307,6 +307,7 @@ function ejj_list_dir_by_union($unionCode) {
 	} elseif ($unionCode=="NAD") {
 		$sqlC=str_replace("and conference is not null and conference!='' and conference not like '%Adventist%'","",$sqlC);			
 	}
+	error_log($sqlC,0);
 	
 	$conf_array = $db -> select($sqlC);
 
